@@ -1,34 +1,45 @@
-plugins {
-    id 'java'
-}
+Thumbs.db*
+        .DS_Store
+HELP.md
+        .gradle
+build/
 
-group 'ru.netology'
-version '1.0-SNAPSHOT'
+### STS ###
+.apt_generated
+        .classpath
+        .factorypath
+        .project
+        .settings
+        .springBeans
+        .sts4-cache
 
-sourceCompatibility = 11
+### IntelliJ IDEA ###
+.idea
+        *.iws
+        *.iml
+        *.ipr
+out/
 
-// кодировка файлов (если используете русский язык в файлах)
-compileJava.options.encoding = "UTF-8"
-compileTestJava.options.encoding = "UTF-8"
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
 
-repositories {
-    mavenCentral()
-}
+### VS Code ###
+.vscode/
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.6.1'
-    // библиотека com.codeborne:selenide используется при построении проекта с использованием Selenide
-    testImplementation 'com.codeborne:selenide:6.17.1'
+### Package Files ###
+*.jar
+        *.war
+        *.nar
+        *.ear
+        *.zip
+        *.tar.gz
+        *.rar
 
-    // при реализации проекте с использованием Selenium вместо библиотеки com.codeborne:selenide подключаются
-    // org.seleniumhq.selenium:selenium-java и io.github.bonigarcia:webdrivermanager
-    testImplementation 'org.seleniumhq.selenium:selenium-java:4.11.0'
-    testImplementation 'io.github.bonigarcia:webdrivermanager:5.4.1'
-}
-
-test {
-    useJUnitPlatform()
-    // в тестах, вызывая `gradlew test -Dselenide.headless=true` будем передавать этот параметр в JVM (где его подтянет Selenide)
-    // свойство selenide.headless используется в проектах на основе Selenide
-    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
-}
+### Exclusions ###
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**
+ !**/src/test/**
